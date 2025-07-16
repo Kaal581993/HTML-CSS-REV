@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/media-query.css">
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+         const links = document.querySelectorAll("ul.menu-container li a",".drop-down-menu a");
+         const loader = document.querySelector(".loader-overlay");
+
+         links.forEach(link => {
+           link.addEventListener("click", function(e) {
+             e.preventDefault();  // stop immediate navigation
+
+             loader.classList.add("active");  // show loader
+
+             const href = this.getAttribute("href");
+             setTimeout(() => {
+               window.location.href = href;
+             }, 5000);  // delay 5s
+           });
+         });
+       });
+     </script>
+
+  </head>
+  <body>
+    <!-- Testimonials begin from here -->
+    <div class="testimonials-container-main">
+      <span class="testimonials-Heading">
+        <h1 style="text-transform:uppercase">What They’re Talking About Our Welding Work</h1>
+      </span>
+      <div class="testimonials-container">
+
+        <div class="clients-image">
+          <div class="image-fluid-row-1">
+              <img src="./img/testimonial/testimonial-1.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-2">
+              <img src="./img/testimonial/testimonial-2.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-1">
+              <img src="./img/testimonial/testimonial-3.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-2">
+              <img src="./img/testimonial/testimonial-4.jpg" alt="">
+          </div>
+        </div>
+        <!-- Invisible anchors (before slider) -->
+        <input type="radio" name="slider" id="slide1" checked hidden>
+        <input type="radio" name="slider" id="slide2" hidden>
+        <input type="radio" name="slider" id="slide3" hidden>
+        <input type="radio" name="slider" id="slide4" hidden>
+
+        <div class="testimonial-message-card">
+          <div class="message-card-container">
+            <div class="slides" id="slide-container">
+            <div class="individual-message-card">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-1.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-2.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-3.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-4.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+          </div>
+            <div class="message-slider-button">
+              <a href="#goto-slide1" class="prev">←</a>
+              <a href="#goto-slide2" class="next">→</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="testimonials-grid">
+
+    </div>
+    <h1>CSS-only Carousel</h1>
+
+    <p>This carousel is created with HTML and CSS only.</p>
+
+    <section class="carousel" aria-label="Gallery">
+      <ol class="carousel__viewport">
+        <li id="carousel__slide1"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper">
+            <a href="#carousel__slide4"
+               class="carousel__prev">Go to last slide</a>
+            <a href="#carousel__slide2"
+               class="carousel__next">Go to next slide</a>
+          </div>
+        </li>
+        <li id="carousel__slide2"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide1"
+             class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide3"
+             class="carousel__next">Go to next slide</a>
+        </li>
+        <li id="carousel__slide3"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide2"
+             class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide4"
+             class="carousel__next">Go to next slide</a>
+        </li>
+        <li id="carousel__slide4"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide3"
+             class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide1"
+             class="carousel__next">Go to first slide</a>
+        </li>
+      </ol>
+      <aside class="carousel__navigation">
+        <ol class="carousel__navigation-list">
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide1"
+               class="carousel__navigation-button">Go to slide 1</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide2"
+               class="carousel__navigation-button">Go to slide 2</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide3"
+               class="carousel__navigation-button">Go to slide 3</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide4"
+               class="carousel__navigation-button">Go to slide 4</a>
+          </li>
+        </ol>
+      </aside>
+    <!-- </section> -->
+
+  </body>
+</html>

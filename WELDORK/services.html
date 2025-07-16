@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>WELDORK</title>
+       <link rel="stylesheet" href="./css/index.css">
+       <link rel="stylesheet" href="./css/media-query.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+       <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>WELDORK</title>
+       <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll("ul.menu-container li a",".drop-down-menu a");
+            const loader = document.querySelector(".loader-overlay");
+
+            links.forEach(link => {
+              link.addEventListener("click", function(e) {
+                e.preventDefault();  // stop immediate navigation
+
+                loader.classList.add("active");  // show loader
+
+                const href = this.getAttribute("href");
+                setTimeout(() => {
+                  window.location.href = href;
+                }, 5000);  // delay 5s
+              });
+            });
+          });
+        </script>
+  </head>
+  <body>
+    <div class="topbar">
+      <nav class="top-nav-bar">
+
+        <!--Logo Section-->
+          <div class="top-nav-section">
+                    <h2 class="text-logo">
+                      <a href="index.html">
+                          WELDORK
+                        </a>
+                      </h2>
+                      <span class="topbar-container">
+                          <small class="topbar-fonts"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="topbar-info-icons">
+                            <path fill="#ffffff" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>
+                            <p>123 Street, New York, USA</p></small>
+                          <small class="topbar-fonts">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="topbar-info-icons">
+                              <path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+                            </svg><p>info@example.com</p></small>
+                          <small class="topbar-fonts"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="topbar-info-icons">
+                            <path fill="#ffffff" d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"></path></svg><p>+012 345 67890</p></small>
+                          <span class="topbar-social-media-container">
+                                  <small class="topbar-icons"><span class="social-media f">f</span></small>
+                                  <small class="topbar-icons"><span class="social-media x">𝕏</span></small>
+                                  <small class="topbar-icons"><span class="social-media in">in</span></small>
+                                  <small class="topbar-icons"><span class="social-media inst">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="38" width="38" viewBox="0 0 448 512"><path fill="#ce9233" d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z"></path>
+                                    </svg>
+                                  </span>
+                                </small>
+                                <small class="topbar-icons"><span class="social-media yt">
+                                  <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 448 512"><path fill="#ce9233" d="M282 256.2l-95.2-54.1V310.3L282 256.2zM384 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm14.4 136.1c7.6 28.6 7.6 88.2 7.6 88.2s0 59.6-7.6 88.1c-4.2 15.8-16.5 27.7-32.2 31.9C337.9 384 224 384 224 384s-113.9 0-142.2-7.6c-15.7-4.2-28-16.1-32.2-31.9C42 315.9 42 256.3 42 256.3s0-59.7 7.6-88.2c4.2-15.8 16.5-28.2 32.2-32.4C110.1 128 224 128 224 128s113.9 0 142.2 7.7c15.7 4.2 28 16.6 32.2 32.4z"></path></svg>
+                                </span>
+                              </small>
+                                </span>
+                              </span>
+            </div>
+
+      </nav>
+    </div>
+    <!-- Menu Navigation -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden="">
+    <label for="nav-toggle" class="nav-toggle-label">
+      ☰
+    </label>
+    <div class="menu-nav">
+      <nav class="menu-nav-bar">
+        <ul class="menu-container">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./about-us.html">ABOUT</a></li>
+          <li><a href="./services.html">SERVICES</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">PAGES</a>
+            <ul class="drop-down-menu">
+              <li><a href="./features.html">FEATURES</a></li>
+              <li><a href="./services.html">SERVICES</a></li>
+              <li><a href="./team.html">TEAM</a></li>
+              <li><a href="./testimonial.html">TESTIMONIAL</a></li>
+              <li><a href="./appointment.html">APPOINTMENT</a></li>
+              <li><a href="./404.html">404</a></li>
+            </ul>
+          </li>
+          <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
+        <span class="menu-button-container">
+          <button class="menu-button-object" type="button" name="button">GET A QUOTE</button>
+        </span>
+      </nav>
+    </div>
+    <!--Carousal Module-->
+    <div class="bread-crumbs-main">
+      <div class="bread-crumbs-container">
+        <div class="bread-crumbs-flex">
+          <span class="bread-crumbs-heading" style="background:#fff">
+            <h1 style="text-transform:uppercase">Services</h1>
+            <ul class"bread-crumbs-text">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">\Pages</a></li>
+              <li><a href class="active">Services</a></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+<!-- Container Article -->
+
+
+
+
+<div class="grid-gallery">
+  <span class="grid-header">
+    <h1>Reliable &amp; High-Quality Welding Services</h1>
+  </span>
+
+  <!-- Grid parent container -->
+  <div class="grid-parent-container">
+
+  <div class="grid-col">
+    <!-- Gird rows to be used as flex -->
+
+    <div class="grid-row">
+
+      <img src="./img/grid/service-2.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Metal Works</h5>
+                   <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+                   </p>
+                   <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+
+    </div>
+    <div class="grid-row">
+
+      <img src="./img/grid/service-3.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Steel welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+
+    </div>
+    <div class="grid-row">
+
+      <img src="./img/grid/service-4.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">pipe welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+
+    </div>
+    <!-- Gird rows to be used as flex -->
+    <div class="grid-row">
+
+      <img src="./img/grid/service-5.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Custom welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+    </div>
+
+    <div class="grid-row">
+
+      <img src="./img/grid/service-2.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Metal Works</h5>
+          <p>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+           </p>
+           <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+    </div>
+    <div class="grid-row">
+
+      <img src="./img/grid/service-3.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Steel welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+
+    </div>
+    <div class="grid-row">
+
+      <img src="./img/grid/service-4.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">pipe welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+
+    </div>
+    <!-- Gird rows to be used as flex -->
+    <div class="grid-row">
+
+      <img src="./img/grid/service-5.jpg" alt="">
+      <span class="grid-text">
+        <h5 style="    text-transform: uppercase;
+                   width: 18em;
+                   font-weight: 900;
+                   font-family: &quot;Roboto&quot;, sans-serif;
+                   " roboto",="" sans-serif;="" text-align:="" center;"="">Custom welding</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.
+        </p>
+        <a href="#">READ MORE &gt;&gt;</a>
+      </span>
+    </div>
+  </div>
+
+
+  </div>
+</div>
+<div class="contact-us-container">
+  <div class="contact-form-layout">
+    <div class="contact-form-col">
+      <div class="contact-form-banner">
+        <div class="heading">
+        <h1 class="contact-heading">We Complete Welding &amp; Metal Projects in Time</h1>
+        <p class="caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.
+        </p>
+      </div>
+      <div class="contact-address">
+        <div class="contact-address-row">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="location-info-icons">
+            <path fill="#000" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z">
+            </path>
+          </svg>
+            <h4>Office Address</h4>
+            <p>123 Street, New York, USA</p>
+      </div>
+        <div class="" role="separator">
+        </div>
+        <div class="contact-address-row">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="location-info-icons">
+          <path fill="#000" d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
+        </svg>
+        <h4>Office Time</h4>
+        <p>Mon-Sat 09am-5pm, Sun Closed</p>
+      </div>
+    </div>
+    </div>
+    <div class="contact-form">
+      <div class="contact-form-container">
+      <div class="form-heading"><h1>Online Appoinment</h1>
+      </div>
+      <form class="contact-form-controls" action="index.html" method="post">
+        <input type="text" name="" class="input-controls" value="" placeholder="Your Name">
+        <input type="text" name="" class="input-controls" value="" placeholder="Your Email">
+        <input type="text" name="" class="input-controls" value="" placeholder="Your Mobile">
+        <select class="input-controls-select" name="" placeholder="Choose a Service">
+          <option value="">Steel Welding</option>
+          <option value="">Pipe Welding</option>
+          <option value="">Custom Weldin</option>
+          <option value="">Metal Works</option>
+        </select>
+        <textarea type="text" class="input-controls-textarea" name="" value="" placeholder="Message"></textarea>
+        <div class="control-submit-button">
+          <button type="button" name="button" class="control-submit-button">Submit</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonials-container-main">
+      <span class="testimonials-Heading">
+        <h1 style="text-transform:uppercase">What They’re Talking About Our Welding Work</h1>
+      </span>
+      <div class="testimonials-container">
+
+        <div class="clients-image">
+          <div class="image-fluid-row-1">
+              <img src="./img/testimonial/testimonial-1.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-2">
+              <img src="./img/testimonial/testimonial-2.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-1">
+              <img src="./img/testimonial/testimonial-3.jpg" alt="">
+          </div>
+          <div class="image-fluid-row-2">
+              <img src="./img/testimonial/testimonial-4.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="testimonial-message-card" id="slider">
+          <div class="message-card-container">
+            <div class="slides" id="slide-container">
+            <div class="individual-message-card" id="slide1">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-1.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card" id="slide2">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-2.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card" id="slide3">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-3.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+            <div class="individual-message-card" id="slide4">
+              <div class="image-fluid">
+                  <img src="./img/testimonial/testimonial-4.jpg" alt="">
+              </div>
+              <div class="ratings">
+                <h5>Client Name</h5>
+                <h6>Profession</h6>
+              </div>
+              <div class="message">
+                <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                    lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                </p>
+              </div>
+            </div>
+          </div>
+            <div class="message-slider-button">
+              <a href="#slide1" class="prev">←</a>
+              <a href="#slide2" class="next">→</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<div class="newsletter-form">
+  <div class=" newsletter-fluid-container">
+          <div class="newsletter-container">
+              <div class="news-letter-background">
+                  <div class="newsletter-container-row">
+                      <div class="newsletter-row-flex">
+                          <h1 class="text-uppercase-header">Newsletter</h1>
+                          <div class="letter-message">
+                            <span class="news-letter-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ce9233" d="M64 208.1L256 65.9 448 208.1l0 47.4L289.5 373c-9.7 7.2-21.4 11-33.5 11s-23.8-3.9-33.5-11L64 255.5l0-47.4zM256 0c-12.1 0-23.8 3.9-33.5 11L25.9 156.7C9.6 168.8 0 187.8 0 208.1L0 448c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-239.9c0-20.3-9.6-39.4-25.9-51.4L289.5 11C279.8 3.9 268.1 0 256 0z"></path></svg>
+                            </span>
+                              <p class="letter-message-des">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore lorem ipsum.</p>
+                          </div>
+                      </div>
+                      <div class="news-letter-form">
+                          <div class="form">
+                              <input type="email" class="news-letter-input" id="mail" placeholder="Your Email">
+                              <label for="mail">Your Email</label>
+                          </div>
+                          <button class="newsletter-submit-button" type="submit">Submit Now</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+<div class="footer">
+  <div class="footer-nav">
+    <div class="footer-row">
+      <div class="footer-col">
+        <span class="footer-col-header"><h1>Our Office</h1>
+        </span>
+        <span class="footer-article">
+          <p>123 Street, New York, USA</p>
+        </span>
+        <span class="footer-article">
+          <p>+012 345 67890</p>
+        </span>
+        <span class="footer-article">
+          <p>info@example.com</p>
+        </span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-header"><h1>Quick Links</h1>
+        </span>
+        <div class="footer-article">
+              <span class="footer-links"><a href="index.html">About</a></span>
+              <span class="footer-links"><a href="about.html"></a></span>
+              <span class="footer-links"><a href="Services.html">Our Services</a></span>
+              <span class="footer-links"><a href="Pages.html">Terms and Conditions</a></span>
+              <span class="footer-links"><a href="Pages.html">Support</a></span>
+          </div>
+      </div>
+      <div class="footer-col">
+          <span class="footer-col-header"><h1>Business Hours</h1>
+          </span>
+          <span class="footer-article">
+            <p>Monday - Friday
+              09:00 am - 07:00 pm</p>
+          </span>
+          <span class="footer-article">
+            <p>Saturday
+              09:00 am - 12:00 pm</p>
+          </span>
+          <span class="footer-article">
+            <p>Sunday Closed</p>
+          </span>
+        </div>
+        <div class="footer-col footer gallery">
+            <span class="footer-col-header"><h1>Gallery</h1>
+            </span>
+            <div class="grid-gallery-footer">
+              <div class="grid-image-container">
+                <div class="grid-image">
+                  <img src="./img/gallery/service-1.jpg" alt=""></div>
+                  <div class="grid-image"><img src="./img/gallery/service-2.jpg" alt=""></div>
+                  <div class="grid-image"><img src="./img/gallery/service-3.jpg" alt=""></div>
+                  <div class="grid-image"><img src="./img/gallery/service-4.jpg" alt=""></div>
+                  <div class="grid-image"><img src="./img/gallery/service-5.jpg" alt=""></div>
+                  <div class="grid-image"><img src="./img/gallery/service-6.jpg" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+  <div class="site-bottom-bar">
+    <p class="site-bottom-bars">© Your Site Name, All Right Reserved.</p>
+    <p class="site-bottom-bars">Designed By Viral Prajapati</p>
+    <button type="button" name="button" class="bottom-fixed-button">↑</button>
+  </div>
+
+
+</body></html>
