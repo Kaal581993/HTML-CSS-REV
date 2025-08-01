@@ -230,10 +230,18 @@ nav.menu-nav-bar {
     color: #ffffff;
     background:var(--menu-background);  }
 
-.menu-container li:focus .drop-down-menu {
-  display: flex;
-}
+  .menu-container li:focus .drop-down-menu {
+    display: flex;
+  }
 
+  .slide.container {
+    width: 1000%;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  } 
+  
 
   /* Default: hide the drop-down menu */
   .drop-down-menu {
